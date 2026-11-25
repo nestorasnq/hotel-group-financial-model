@@ -1,0 +1,4 @@
+hotel,location,rooms,days_open,occupancy,adr_eur
+City,"Thessaloniki, open all year",100,365,0.70,100
+Resort,"Halkidiki, summer season",300,150,0.80,300
+Island,"Crete, long season",100,200,0.60,200

@@ -1,0 +1,505 @@
+1. INPUTS
+OK    input KPIs!C5 = hotels.csv City rooms
+OK    input KPIs!D5 = hotels.csv City days_open
+OK    input KPIs!E5 = hotels.csv City occupancy
+OK    input KPIs!F5 = hotels.csv City adr_eur
+OK    input KPIs!C6 = hotels.csv Resort rooms
+OK    input KPIs!D6 = hotels.csv Resort days_open
+OK    input KPIs!E6 = hotels.csv Resort occupancy
+OK    input KPIs!F6 = hotels.csv Resort adr_eur
+OK    input KPIs!C7 = hotels.csv Island rooms
+OK    input KPIs!D7 = hotels.csv Island days_open
+OK    input KPIs!E7 = hotels.csv Island occupancy
+OK    input KPIs!F7 = hotels.csv Island adr_eur
+OK    input Data!A5:E50 = ledger_extract.csv (46 lines, 0 different)
+OK    input Mapping = account_mapping.csv (15 accounts, 0 different)
+OK    input Contract!B5 = base fee
+OK    input Contract!B6 = incentive fee
+OK    input Fixed assets!B3 = year end
+OK    input Fixed assets!A6:E14 = fixed_assets.csv (0 different)
+OK    input Returns!B5:D7 = balances_2025.csv (0 different)
+
+2. FORMULAS
+OK    every number that is not a blue input is a formula
+OK    KPIs: columns GHIJ, rows 5–7 all use the same formula
+OK    Data: columns FGHI, rows 5–50 all use the same formula
+OK    Fixed assets: columns FGHI, rows 6–14 all use the same formula
+OK    Contract: columns BCDEF, rows 12–14 all use the same formula
+OK    P&L: the three hotel columns use the same formulas
+OK    Returns: the three hotel columns use the same formulas
+
+3–4. RESULTS AND THE WORKBOOK'S OWN CHECKS
+OK    KPIs City Available: excel 36500 python 36500.0000
+OK    KPIs City Sold: excel 25550 python 25550.0000
+OK    KPIs City Rooms revenue: excel 2555000 python 2555000.0000
+OK    KPIs City RevPAR: excel 70 python 70.0000
+OK    KPIs Resort Available: excel 45000 python 45000.0000
+OK    KPIs Resort Sold: excel 36000 python 36000.0000
+OK    KPIs Resort Rooms revenue: excel 10800000 python 10800000.0000
+OK    KPIs Resort RevPAR: excel 240 python 240.0000
+OK    KPIs Island Available: excel 20000 python 20000.0000
+OK    KPIs Island Sold: excel 12000 python 12000.0000
+OK    KPIs Island Rooms revenue: excel 2400000 python 2400000.0000
+OK    KPIs Island RevPAR: excel 120 python 120.0000
+OK    KPIs Group Available: excel 101500 python 101500.0000
+OK    KPIs Group Sold: excel 73550 python 73550.0000
+OK    KPIs Group Rooms revenue: excel 15755000 python 15755000.0000
+OK    KPIs Group Occupancy: excel 0.724630541871921 python 0.7246
+OK    KPIs Group ADR: excel 214.208021753909 python 214.2080
+OK    KPIs Group RevPAR: excel 155.221674876847 python 155.2217
+OK    P&L Rooms revenue City: excel 2555000 python 2555000.0000
+OK    P&L Rooms revenue Resort: excel 10800000 python 10800000.0000
+OK    P&L Rooms revenue Island: excel 2400000 python 2400000.0000
+OK    P&L Rooms revenue Group: excel 15755000 python 15755000.0000
+OK    P&L F&B and other revenue City: excel 645000 python 645000.0000
+OK    P&L F&B and other revenue Resort: excel 4200000 python 4200000.0000
+OK    P&L F&B and other revenue Island: excel 600000 python 600000.0000
+OK    P&L F&B and other revenue Group: excel 5445000 python 5445000.0000
+OK    P&L Total revenue City: excel 3200000 python 3200000.0000
+OK    P&L Total revenue Resort: excel 15000000 python 15000000.0000
+OK    P&L Total revenue Island: excel 3000000 python 3000000.0000
+OK    P&L Total revenue Group: excel 21200000 python 21200000.0000
+OK    P&L Staff costs City: excel 1000000 python 1000000.0000
+OK    P&L Staff costs Resort: excel 4200000 python 4200000.0000
+OK    P&L Staff costs Island: excel 1000000 python 1000000.0000
+OK    P&L Staff costs Group: excel 6200000 python 6200000.0000
+OK    P&L Food and beverage cost City: excel 200000 python 200000.0000
+OK    P&L Food and beverage cost Resort: excel 1300000 python 1300000.0000
+OK    P&L Food and beverage cost Island: excel 200000 python 200000.0000
+OK    P&L Food and beverage cost Group: excel 1700000 python 1700000.0000
+OK    P&L Utilities and energy City: excel 300000 python 300000.0000
+OK    P&L Utilities and energy Resort: excel 1100000 python 1100000.0000
+OK    P&L Utilities and energy Island: excel 330000 python 330000.0000
+OK    P&L Utilities and energy Group: excel 1730000 python 1730000.0000
+OK    P&L Sales and marketing City: excel 300000 python 300000.0000
+OK    P&L Sales and marketing Resort: excel 1200000 python 1200000.0000
+OK    P&L Sales and marketing Island: excel 300000 python 300000.0000
+OK    P&L Sales and marketing Group: excel 1800000 python 1800000.0000
+OK    P&L Repairs and maintenance City: excel 120000 python 120000.0000
+OK    P&L Repairs and maintenance Resort: excel 450000 python 450000.0000
+OK    P&L Repairs and maintenance Island: excel 130000 python 130000.0000
+OK    P&L Repairs and maintenance Group: excel 700000 python 700000.0000
+OK    P&L Other operating costs City: excel 160000 python 160000.0000
+OK    P&L Other operating costs Resort: excel 450000 python 450000.0000
+OK    P&L Other operating costs Island: excel 140000 python 140000.0000
+OK    P&L Other operating costs Group: excel 750000 python 750000.0000
+OK    P&L Total operating costs City: excel 2080000 python 2080000.0000
+OK    P&L Total operating costs Resort: excel 8700000 python 8700000.0000
+OK    P&L Total operating costs Island: excel 2100000 python 2100000.0000
+OK    P&L Total operating costs Group: excel 12880000 python 12880000.0000
+OK    P&L GOP (gross operating profit) City: excel 1120000 python 1120000.0000
+OK    P&L GOP (gross operating profit) Resort: excel 6300000 python 6300000.0000
+OK    P&L GOP (gross operating profit) Island: excel 900000 python 900000.0000
+OK    P&L GOP (gross operating profit) Group: excel 8320000 python 8320000.0000
+OK    P&L GOP margin City: excel 0.35 python 0.3500
+OK    P&L GOP margin Resort: excel 0.42 python 0.4200
+OK    P&L GOP margin Island: excel 0.3 python 0.3000
+OK    P&L GOP margin Group: excel 0.392452830188679 python 0.3925
+OK    P&L Management fee (as invoiced) City: excel 240000 python 240000.0000
+OK    P&L Management fee (as invoiced) Resort: excel 1080000 python 1080000.0000
+OK    P&L Management fee (as invoiced) Island: excel 180000 python 180000.0000
+OK    P&L Management fee (as invoiced) Group: excel 1500000 python 1500000.0000
+OK    P&L EBITDA City: excel 880000 python 880000.0000
+OK    P&L EBITDA Resort: excel 5220000 python 5220000.0000
+OK    P&L EBITDA Island: excel 720000 python 720000.0000
+OK    P&L EBITDA Group: excel 6820000 python 6820000.0000
+OK    P&L EBITDA margin City: excel 0.275 python 0.2750
+OK    P&L EBITDA margin Resort: excel 0.348 python 0.3480
+OK    P&L EBITDA margin Island: excel 0.24 python 0.2400
+OK    P&L EBITDA margin Group: excel 0.321698113207547 python 0.3217
+OK    P&L Depreciation City: excel 300000 python 300000.0000
+OK    P&L Depreciation Resort: excel 1500000 python 1500000.0000
+OK    P&L Depreciation Island: excel 400000 python 400000.0000
+OK    P&L Depreciation Group: excel 2200000 python 2200000.0000
+OK    P&L EBIT City: excel 580000 python 580000.0000
+OK    P&L EBIT Resort: excel 3720000 python 3720000.0000
+OK    P&L EBIT Island: excel 320000 python 320000.0000
+OK    P&L EBIT Group: excel 4620000 python 4620000.0000
+OK    P&L Share of group GOP City: excel 0.134615384615385 python 0.1346
+OK    P&L Share of group GOP Resort: excel 0.757211538461538 python 0.7572
+OK    P&L Share of group GOP Island: excel 0.108173076923077 python 0.1082
+OK    P&L Share of group GOP Group: excel 1 python 1.0000
+OK    Fixed assets City Land Years in use: excel 10 python 10
+OK    Fixed assets City Land Depreciation per year: excel 0 python 0.0
+OK    Fixed assets City Land Depreciation so far: excel 0 python 0.0
+OK    Fixed assets City Land Net book value: excel 2000000 python 2000000.0
+OK    Fixed assets City Building Years in use: excel 10 python 10
+OK    Fixed assets City Building Depreciation per year: excel 200000 python 200000.0
+OK    Fixed assets City Building Depreciation so far: excel 2000000 python 2000000.0
+OK    Fixed assets City Building Net book value: excel 6000000 python 6000000.0
+OK    Fixed assets City Furniture and equipment Years in use: excel 5 python 5
+OK    Fixed assets City Furniture and equipment Depreciation per year: excel 100000 python 100000.0
+OK    Fixed assets City Furniture and equipment Depreciation so far: excel 500000 python 500000.0
+OK    Fixed assets City Furniture and equipment Net book value: excel 500000 python 500000.0
+OK    Fixed assets Resort Land Years in use: excel 15 python 15
+OK    Fixed assets Resort Land Depreciation per year: excel 0 python 0.0
+OK    Fixed assets Resort Land Depreciation so far: excel 0 python 0.0
+OK    Fixed assets Resort Land Net book value: excel 10000000 python 10000000.0
+OK    Fixed assets Resort Building Years in use: excel 15 python 15
+OK    Fixed assets Resort Building Depreciation per year: excel 1000000 python 1000000.0
+OK    Fixed assets Resort Building Depreciation so far: excel 15000000 python 15000000.0
+OK    Fixed assets Resort Building Net book value: excel 25000000 python 25000000.0
+OK    Fixed assets Resort Furniture and equipment Years in use: excel 5 python 5
+OK    Fixed assets Resort Furniture and equipment Depreciation per year: excel 500000 python 500000.0
+OK    Fixed assets Resort Furniture and equipment Depreciation so far: excel 2500000 python 2500000.0
+OK    Fixed assets Resort Furniture and equipment Net book value: excel 2500000 python 2500000.0
+OK    Fixed assets Island Land Years in use: excel 5 python 5
+OK    Fixed assets Island Land Depreciation per year: excel 0 python 0.0
+OK    Fixed assets Island Land Depreciation so far: excel 0 python 0.0
+OK    Fixed assets Island Land Net book value: excel 3000000 python 3000000.0
+OK    Fixed assets Island Building Years in use: excel 5 python 5
+OK    Fixed assets Island Building Depreciation per year: excel 250000 python 250000.0
+OK    Fixed assets Island Building Depreciation so far: excel 1250000 python 1250000.0
+OK    Fixed assets Island Building Net book value: excel 8750000 python 8750000.0
+OK    Fixed assets Island Furniture and equipment Years in use: excel 5 python 5
+OK    Fixed assets Island Furniture and equipment Depreciation per year: excel 150000 python 150000.0
+OK    Fixed assets Island Furniture and equipment Depreciation so far: excel 750000 python 750000.0
+OK    Fixed assets Island Furniture and equipment Net book value: excel 750000 python 750000.0
+OK    Fixed assets total City Cost: excel 11000000
+OK    Fixed assets total City Depreciation 2025: excel 300000
+OK    Fixed assets total City Depreciation so far: excel 2500000
+OK    Fixed assets total City Net book value: excel 8500000
+OK    Fixed assets total Resort Cost: excel 55000000
+OK    Fixed assets total Resort Depreciation 2025: excel 1500000
+OK    Fixed assets total Resort Depreciation so far: excel 17500000
+OK    Fixed assets total Resort Net book value: excel 37500000
+OK    Fixed assets total Island Cost: excel 14500000
+OK    Fixed assets total Island Depreciation 2025: excel 400000
+OK    Fixed assets total Island Depreciation so far: excel 2000000
+OK    Fixed assets total Island Net book value: excel 12500000
+OK    Fixed assets total Group Cost: excel 80500000
+OK    Fixed assets total Group Depreciation 2025: excel 2200000
+OK    Fixed assets total Group Depreciation so far: excel 22000000
+OK    Fixed assets total Group Net book value: excel 58500000
+OK    Journal entry total debits: excel 2200000
+OK    Journal entry total credits: excel 2200000
+OK    Returns Receivables (€) City: excel 260000 python 260000.0000
+OK    Returns Receivables (€) Resort: excel 200000 python 200000.0000
+OK    Returns Receivables (€) Island: excel 120000 python 120000.0000
+OK    Returns Receivables (€) Group: excel 580000 python 580000.0000
+OK    Returns Inventory: food and drink (€) City: excel 15000 python 15000.0000
+OK    Returns Inventory: food and drink (€) Resort: excel 20000 python 20000.0000
+OK    Returns Inventory: food and drink (€) Island: excel 10000 python 10000.0000
+OK    Returns Inventory: food and drink (€) Group: excel 45000 python 45000.0000
+OK    Returns Payables to suppliers (€) City: excel 180000 python 180000.0000
+OK    Returns Payables to suppliers (€) Resort: excel 400000 python 400000.0000
+OK    Returns Payables to suppliers (€) Island: excel 150000 python 150000.0000
+OK    Returns Payables to suppliers (€) Group: excel 730000 python 730000.0000
+OK    Returns Working capital (€) City: excel 95000 python 95000.0000
+OK    Returns Working capital (€) Resort: excel -180000 python -180000.0000
+OK    Returns Working capital (€) Island: excel -20000 python -20000.0000
+OK    Returns Working capital (€) Group: excel -105000 python -105000.0000
+OK    Returns Revenue (€) City: excel 3200000 python 3200000.0000
+OK    Returns Revenue (€) Resort: excel 15000000 python 15000000.0000
+OK    Returns Revenue (€) Island: excel 3000000 python 3000000.0000
+OK    Returns Revenue (€) Group: excel 21200000 python 21200000.0000
+OK    Returns Food and beverage cost (€) City: excel 200000 python 200000.0000
+OK    Returns Food and beverage cost (€) Resort: excel 1300000 python 1300000.0000
+OK    Returns Food and beverage cost (€) Island: excel 200000 python 200000.0000
+OK    Returns Food and beverage cost (€) Group: excel 1700000 python 1700000.0000
+OK    Returns Supplier costs (€) City: excel 1080000 python 1080000.0000
+OK    Returns Supplier costs (€) Resort: excel 4500000 python 4500000.0000
+OK    Returns Supplier costs (€) Island: excel 1100000 python 1100000.0000
+OK    Returns Supplier costs (€) Group: excel 6680000 python 6680000.0000
+OK    Returns DSO: days customers take to pay City: excel 29.65625 python 29.6562
+OK    Returns DSO: days customers take to pay Resort: excel 4.86666666666667 python 4.8667
+OK    Returns DSO: days customers take to pay Island: excel 14.6 python 14.6000
+OK    Returns DSO: days customers take to pay Group: excel 9.98584905660377 python 9.9858
+OK    Returns DIO: days stock sits City: excel 27.375 python 27.3750
+OK    Returns DIO: days stock sits Resort: excel 5.61538461538462 python 5.6154
+OK    Returns DIO: days stock sits Island: excel 18.25 python 18.2500
+OK    Returns DIO: days stock sits Group: excel 9.66176470588235 python 9.6618
+OK    Returns DPO: days we take to pay City: excel 60.8333333333333 python 60.8333
+OK    Returns DPO: days we take to pay Resort: excel 32.4444444444444 python 32.4444
+OK    Returns DPO: days we take to pay Island: excel 49.7727272727273 python 49.7727
+OK    Returns DPO: days we take to pay Group: excel 39.8877245508982 python 39.8877
+OK    Returns Cash cycle (days) City: excel -3.80208333333333 python -3.8021
+OK    Returns Cash cycle (days) Resort: excel -21.9623931623932 python -21.9624
+OK    Returns Cash cycle (days) Island: excel -16.9227272727273 python -16.9227
+OK    Returns Cash cycle (days) Group: excel -20.2401107884121 python -20.2401
+OK    Returns EBIT (€) City: excel 580000 python 580000.0000
+OK    Returns EBIT (€) Resort: excel 3720000 python 3720000.0000
+OK    Returns EBIT (€) Island: excel 320000 python 320000.0000
+OK    Returns EBIT (€) Group: excel 4620000 python 4620000.0000
+OK    Returns Net book value (€) City: excel 8500000 python 8500000.0000
+OK    Returns Net book value (€) Resort: excel 37500000 python 37500000.0000
+OK    Returns Net book value (€) Island: excel 12500000 python 12500000.0000
+OK    Returns Net book value (€) Group: excel 58500000 python 58500000.0000
+OK    Returns Capital employed (€) City: excel 8595000 python 8595000.0000
+OK    Returns Capital employed (€) Resort: excel 37320000 python 37320000.0000
+OK    Returns Capital employed (€) Island: excel 12480000 python 12480000.0000
+OK    Returns Capital employed (€) Group: excel 58395000 python 58395000.0000
+OK    Returns ROCE City: excel 0.0674810936591041 python 0.0675
+OK    Returns ROCE Resort: excel 0.0996784565916399 python 0.0997
+OK    Returns ROCE Island: excel 0.0256410256410256 python 0.0256
+OK    Returns ROCE Group: excel 0.0791163627022862 python 0.0791
+OK    check 1a unmapped accounts: 0
+OK    check 1b export total − P&L total: 0
+OK    check 2a duplicates: 1
+OK    check 2b amount removed: 250000
+OK    check 2c duplicate line: 40
+OK    check 3 rooms tie-out City: 0
+OK    check 4a fee per contract City: 208000
+OK    check 4c to claim back City: 32000
+OK    check 5 register − ledger depreciation City: 0
+OK    check 3 rooms tie-out Resort: 0
+OK    check 4a fee per contract Resort: 1080000
+OK    check 4c to claim back Resort: 0
+OK    check 5 register − ledger depreciation Resort: 0
+OK    check 3 rooms tie-out Island: 0
+OK    check 4a fee per contract Island: 180000
+OK    check 4c to claim back Island: 0
+OK    check 5 register − ledger depreciation Island: 0
+OK    check 6 journal entry debits − credits: 0
+OK    check 4d EBITDA after recovery City: 912000
+OK    check 4d EBITDA after recovery Resort: 5220000
+OK    check 4d EBITDA after recovery Island: 720000
+OK    Contract City Base fee: excel 96000
+OK    Contract City Incentive fee: excel 112000
+OK    Contract City Fee per contract: excel 208000
+OK    Contract Resort Base fee: excel 450000
+OK    Contract Resort Incentive fee: excel 630000
+OK    Contract Resort Fee per contract: excel 1080000
+OK    Contract Island Base fee: excel 90000
+OK    Contract Island Incentive fee: excel 90000
+OK    Contract Island Fee per contract: excel 180000
+
+5. CHANGE TEST
+      changed: Resort occupancy 80%→70%; base fee 3%→4%; City building life 40→50 years; Island receivables 120k→240k
+OK    [changed] KPIs City Available: excel 36500 python 36500.0000
+OK    [changed] KPIs City Sold: excel 25550 python 25550.0000
+OK    [changed] KPIs City Rooms revenue: excel 2555000 python 2555000.0000
+OK    [changed] KPIs City RevPAR: excel 70 python 70.0000
+OK    [changed] KPIs Resort Available: excel 45000 python 45000.0000
+OK    [changed] KPIs Resort Sold: excel 31500 python 31500.0000
+OK    [changed] KPIs Resort Rooms revenue: excel 9450000 python 9450000.0000
+OK    [changed] KPIs Resort RevPAR: excel 210 python 210.0000
+OK    [changed] KPIs Island Available: excel 20000 python 20000.0000
+OK    [changed] KPIs Island Sold: excel 12000 python 12000.0000
+OK    [changed] KPIs Island Rooms revenue: excel 2400000 python 2400000.0000
+OK    [changed] KPIs Island RevPAR: excel 120 python 120.0000
+OK    [changed] KPIs Group Available: excel 101500 python 101500.0000
+OK    [changed] KPIs Group Sold: excel 69050 python 69050.0000
+OK    [changed] KPIs Group Rooms revenue: excel 14405000 python 14405000.0000
+OK    [changed] KPIs Group Occupancy: excel 0.680295566502463 python 0.6803
+OK    [changed] KPIs Group ADR: excel 208.616944243302 python 208.6169
+OK    [changed] KPIs Group RevPAR: excel 141.92118226601 python 141.9212
+OK    [changed] P&L Rooms revenue City: excel 2555000 python 2555000.0000
+OK    [changed] P&L Rooms revenue Resort: excel 10800000 python 10800000.0000
+OK    [changed] P&L Rooms revenue Island: excel 2400000 python 2400000.0000
+OK    [changed] P&L Rooms revenue Group: excel 15755000 python 15755000.0000
+OK    [changed] P&L F&B and other revenue City: excel 645000 python 645000.0000
+OK    [changed] P&L F&B and other revenue Resort: excel 4200000 python 4200000.0000
+OK    [changed] P&L F&B and other revenue Island: excel 600000 python 600000.0000
+OK    [changed] P&L F&B and other revenue Group: excel 5445000 python 5445000.0000
+OK    [changed] P&L Total revenue City: excel 3200000 python 3200000.0000
+OK    [changed] P&L Total revenue Resort: excel 15000000 python 15000000.0000
+OK    [changed] P&L Total revenue Island: excel 3000000 python 3000000.0000
+OK    [changed] P&L Total revenue Group: excel 21200000 python 21200000.0000
+OK    [changed] P&L Staff costs City: excel 1000000 python 1000000.0000
+OK    [changed] P&L Staff costs Resort: excel 4200000 python 4200000.0000
+OK    [changed] P&L Staff costs Island: excel 1000000 python 1000000.0000
+OK    [changed] P&L Staff costs Group: excel 6200000 python 6200000.0000
+OK    [changed] P&L Food and beverage cost City: excel 200000 python 200000.0000
+OK    [changed] P&L Food and beverage cost Resort: excel 1300000 python 1300000.0000
+OK    [changed] P&L Food and beverage cost Island: excel 200000 python 200000.0000
+OK    [changed] P&L Food and beverage cost Group: excel 1700000 python 1700000.0000
+OK    [changed] P&L Utilities and energy City: excel 300000 python 300000.0000
+OK    [changed] P&L Utilities and energy Resort: excel 1100000 python 1100000.0000
+OK    [changed] P&L Utilities and energy Island: excel 330000 python 330000.0000
+OK    [changed] P&L Utilities and energy Group: excel 1730000 python 1730000.0000
+OK    [changed] P&L Sales and marketing City: excel 300000 python 300000.0000
+OK    [changed] P&L Sales and marketing Resort: excel 1200000 python 1200000.0000
+OK    [changed] P&L Sales and marketing Island: excel 300000 python 300000.0000
+OK    [changed] P&L Sales and marketing Group: excel 1800000 python 1800000.0000
+OK    [changed] P&L Repairs and maintenance City: excel 120000 python 120000.0000
+OK    [changed] P&L Repairs and maintenance Resort: excel 450000 python 450000.0000
+OK    [changed] P&L Repairs and maintenance Island: excel 130000 python 130000.0000
+OK    [changed] P&L Repairs and maintenance Group: excel 700000 python 700000.0000
+OK    [changed] P&L Other operating costs City: excel 160000 python 160000.0000
+OK    [changed] P&L Other operating costs Resort: excel 450000 python 450000.0000
+OK    [changed] P&L Other operating costs Island: excel 140000 python 140000.0000
+OK    [changed] P&L Other operating costs Group: excel 750000 python 750000.0000
+OK    [changed] P&L Total operating costs City: excel 2080000 python 2080000.0000
+OK    [changed] P&L Total operating costs Resort: excel 8700000 python 8700000.0000
+OK    [changed] P&L Total operating costs Island: excel 2100000 python 2100000.0000
+OK    [changed] P&L Total operating costs Group: excel 12880000 python 12880000.0000
+OK    [changed] P&L GOP (gross operating profit) City: excel 1120000 python 1120000.0000
+OK    [changed] P&L GOP (gross operating profit) Resort: excel 6300000 python 6300000.0000
+OK    [changed] P&L GOP (gross operating profit) Island: excel 900000 python 900000.0000
+OK    [changed] P&L GOP (gross operating profit) Group: excel 8320000 python 8320000.0000
+OK    [changed] P&L GOP margin City: excel 0.35 python 0.3500
+OK    [changed] P&L GOP margin Resort: excel 0.42 python 0.4200
+OK    [changed] P&L GOP margin Island: excel 0.3 python 0.3000
+OK    [changed] P&L GOP margin Group: excel 0.392452830188679 python 0.3925
+OK    [changed] P&L Management fee (as invoiced) City: excel 240000 python 240000.0000
+OK    [changed] P&L Management fee (as invoiced) Resort: excel 1080000 python 1080000.0000
+OK    [changed] P&L Management fee (as invoiced) Island: excel 180000 python 180000.0000
+OK    [changed] P&L Management fee (as invoiced) Group: excel 1500000 python 1500000.0000
+OK    [changed] P&L EBITDA City: excel 880000 python 880000.0000
+OK    [changed] P&L EBITDA Resort: excel 5220000 python 5220000.0000
+OK    [changed] P&L EBITDA Island: excel 720000 python 720000.0000
+OK    [changed] P&L EBITDA Group: excel 6820000 python 6820000.0000
+OK    [changed] P&L EBITDA margin City: excel 0.275 python 0.2750
+OK    [changed] P&L EBITDA margin Resort: excel 0.348 python 0.3480
+OK    [changed] P&L EBITDA margin Island: excel 0.24 python 0.2400
+OK    [changed] P&L EBITDA margin Group: excel 0.321698113207547 python 0.3217
+OK    [changed] P&L Depreciation City: excel 300000 python 300000.0000
+OK    [changed] P&L Depreciation Resort: excel 1500000 python 1500000.0000
+OK    [changed] P&L Depreciation Island: excel 400000 python 400000.0000
+OK    [changed] P&L Depreciation Group: excel 2200000 python 2200000.0000
+OK    [changed] P&L EBIT City: excel 580000 python 580000.0000
+OK    [changed] P&L EBIT Resort: excel 3720000 python 3720000.0000
+OK    [changed] P&L EBIT Island: excel 320000 python 320000.0000
+OK    [changed] P&L EBIT Group: excel 4620000 python 4620000.0000
+OK    [changed] P&L Share of group GOP City: excel 0.134615384615385 python 0.1346
+OK    [changed] P&L Share of group GOP Resort: excel 0.757211538461538 python 0.7572
+OK    [changed] P&L Share of group GOP Island: excel 0.108173076923077 python 0.1082
+OK    [changed] P&L Share of group GOP Group: excel 1 python 1.0000
+OK    [changed] Fixed assets City Land Years in use: excel 10 python 10
+OK    [changed] Fixed assets City Land Depreciation per year: excel 0 python 0.0
+OK    [changed] Fixed assets City Land Depreciation so far: excel 0 python 0.0
+OK    [changed] Fixed assets City Land Net book value: excel 2000000 python 2000000.0
+OK    [changed] Fixed assets City Building Years in use: excel 10 python 10
+OK    [changed] Fixed assets City Building Depreciation per year: excel 160000 python 160000.0
+OK    [changed] Fixed assets City Building Depreciation so far: excel 1600000 python 1600000.0
+OK    [changed] Fixed assets City Building Net book value: excel 6400000 python 6400000.0
+OK    [changed] Fixed assets City Furniture and equipment Years in use: excel 5 python 5
+OK    [changed] Fixed assets City Furniture and equipment Depreciation per year: excel 100000 python 100000.0
+OK    [changed] Fixed assets City Furniture and equipment Depreciation so far: excel 500000 python 500000.0
+OK    [changed] Fixed assets City Furniture and equipment Net book value: excel 500000 python 500000.0
+OK    [changed] Fixed assets Resort Land Years in use: excel 15 python 15
+OK    [changed] Fixed assets Resort Land Depreciation per year: excel 0 python 0.0
+OK    [changed] Fixed assets Resort Land Depreciation so far: excel 0 python 0.0
+OK    [changed] Fixed assets Resort Land Net book value: excel 10000000 python 10000000.0
+OK    [changed] Fixed assets Resort Building Years in use: excel 15 python 15
+OK    [changed] Fixed assets Resort Building Depreciation per year: excel 1000000 python 1000000.0
+OK    [changed] Fixed assets Resort Building Depreciation so far: excel 15000000 python 15000000.0
+OK    [changed] Fixed assets Resort Building Net book value: excel 25000000 python 25000000.0
+OK    [changed] Fixed assets Resort Furniture and equipment Years in use: excel 5 python 5
+OK    [changed] Fixed assets Resort Furniture and equipment Depreciation per year: excel 500000 python 500000.0
+OK    [changed] Fixed assets Resort Furniture and equipment Depreciation so far: excel 2500000 python 2500000.0
+OK    [changed] Fixed assets Resort Furniture and equipment Net book value: excel 2500000 python 2500000.0
+OK    [changed] Fixed assets Island Land Years in use: excel 5 python 5
+OK    [changed] Fixed assets Island Land Depreciation per year: excel 0 python 0.0
+OK    [changed] Fixed assets Island Land Depreciation so far: excel 0 python 0.0
+OK    [changed] Fixed assets Island Land Net book value: excel 3000000 python 3000000.0
+OK    [changed] Fixed assets Island Building Years in use: excel 5 python 5
+OK    [changed] Fixed assets Island Building Depreciation per year: excel 250000 python 250000.0
+OK    [changed] Fixed assets Island Building Depreciation so far: excel 1250000 python 1250000.0
+OK    [changed] Fixed assets Island Building Net book value: excel 8750000 python 8750000.0
+OK    [changed] Fixed assets Island Furniture and equipment Years in use: excel 5 python 5
+OK    [changed] Fixed assets Island Furniture and equipment Depreciation per year: excel 150000 python 150000.0
+OK    [changed] Fixed assets Island Furniture and equipment Depreciation so far: excel 750000 python 750000.0
+OK    [changed] Fixed assets Island Furniture and equipment Net book value: excel 750000 python 750000.0
+OK    [changed] Fixed assets total City Cost: excel 11000000
+OK    [changed] Fixed assets total City Depreciation 2025: excel 260000
+OK    [changed] Fixed assets total City Depreciation so far: excel 2100000
+OK    [changed] Fixed assets total City Net book value: excel 8900000
+OK    [changed] Fixed assets total Resort Cost: excel 55000000
+OK    [changed] Fixed assets total Resort Depreciation 2025: excel 1500000
+OK    [changed] Fixed assets total Resort Depreciation so far: excel 17500000
+OK    [changed] Fixed assets total Resort Net book value: excel 37500000
+OK    [changed] Fixed assets total Island Cost: excel 14500000
+OK    [changed] Fixed assets total Island Depreciation 2025: excel 400000
+OK    [changed] Fixed assets total Island Depreciation so far: excel 2000000
+OK    [changed] Fixed assets total Island Net book value: excel 12500000
+OK    [changed] Fixed assets total Group Cost: excel 80500000
+OK    [changed] Fixed assets total Group Depreciation 2025: excel 2160000
+OK    [changed] Fixed assets total Group Depreciation so far: excel 21600000
+OK    [changed] Fixed assets total Group Net book value: excel 58900000
+OK    [changed] Journal entry total debits: excel 2160000
+OK    [changed] Journal entry total credits: excel 2160000
+OK    [changed] Returns Receivables (€) City: excel 260000 python 260000.0000
+OK    [changed] Returns Receivables (€) Resort: excel 200000 python 200000.0000
+OK    [changed] Returns Receivables (€) Island: excel 240000 python 240000.0000
+OK    [changed] Returns Receivables (€) Group: excel 700000 python 700000.0000
+OK    [changed] Returns Inventory: food and drink (€) City: excel 15000 python 15000.0000
+OK    [changed] Returns Inventory: food and drink (€) Resort: excel 20000 python 20000.0000
+OK    [changed] Returns Inventory: food and drink (€) Island: excel 10000 python 10000.0000
+OK    [changed] Returns Inventory: food and drink (€) Group: excel 45000 python 45000.0000
+OK    [changed] Returns Payables to suppliers (€) City: excel 180000 python 180000.0000
+OK    [changed] Returns Payables to suppliers (€) Resort: excel 400000 python 400000.0000
+OK    [changed] Returns Payables to suppliers (€) Island: excel 150000 python 150000.0000
+OK    [changed] Returns Payables to suppliers (€) Group: excel 730000 python 730000.0000
+OK    [changed] Returns Working capital (€) City: excel 95000 python 95000.0000
+OK    [changed] Returns Working capital (€) Resort: excel -180000 python -180000.0000
+OK    [changed] Returns Working capital (€) Island: excel 100000 python 100000.0000
+OK    [changed] Returns Working capital (€) Group: excel 15000 python 15000.0000
+OK    [changed] Returns Revenue (€) City: excel 3200000 python 3200000.0000
+OK    [changed] Returns Revenue (€) Resort: excel 15000000 python 15000000.0000
+OK    [changed] Returns Revenue (€) Island: excel 3000000 python 3000000.0000
+OK    [changed] Returns Revenue (€) Group: excel 21200000 python 21200000.0000
+OK    [changed] Returns Food and beverage cost (€) City: excel 200000 python 200000.0000
+OK    [changed] Returns Food and beverage cost (€) Resort: excel 1300000 python 1300000.0000
+OK    [changed] Returns Food and beverage cost (€) Island: excel 200000 python 200000.0000
+OK    [changed] Returns Food and beverage cost (€) Group: excel 1700000 python 1700000.0000
+OK    [changed] Returns Supplier costs (€) City: excel 1080000 python 1080000.0000
+OK    [changed] Returns Supplier costs (€) Resort: excel 4500000 python 4500000.0000
+OK    [changed] Returns Supplier costs (€) Island: excel 1100000 python 1100000.0000
+OK    [changed] Returns Supplier costs (€) Group: excel 6680000 python 6680000.0000
+OK    [changed] Returns DSO: days customers take to pay City: excel 29.65625 python 29.6562
+OK    [changed] Returns DSO: days customers take to pay Resort: excel 4.86666666666667 python 4.8667
+OK    [changed] Returns DSO: days customers take to pay Island: excel 29.2 python 29.2000
+OK    [changed] Returns DSO: days customers take to pay Group: excel 12.0518867924528 python 12.0519
+OK    [changed] Returns DIO: days stock sits City: excel 27.375 python 27.3750
+OK    [changed] Returns DIO: days stock sits Resort: excel 5.61538461538462 python 5.6154
+OK    [changed] Returns DIO: days stock sits Island: excel 18.25 python 18.2500
+OK    [changed] Returns DIO: days stock sits Group: excel 9.66176470588235 python 9.6618
+OK    [changed] Returns DPO: days we take to pay City: excel 60.8333333333333 python 60.8333
+OK    [changed] Returns DPO: days we take to pay Resort: excel 32.4444444444444 python 32.4444
+OK    [changed] Returns DPO: days we take to pay Island: excel 49.7727272727273 python 49.7727
+OK    [changed] Returns DPO: days we take to pay Group: excel 39.8877245508982 python 39.8877
+OK    [changed] Returns Cash cycle (days) City: excel -3.80208333333333 python -3.8021
+OK    [changed] Returns Cash cycle (days) Resort: excel -21.9623931623932 python -21.9624
+OK    [changed] Returns Cash cycle (days) Island: excel -2.32272727272726 python -2.3227
+OK    [changed] Returns Cash cycle (days) Group: excel -18.174073052563 python -18.1741
+OK    [changed] Returns EBIT (€) City: excel 580000 python 580000.0000
+OK    [changed] Returns EBIT (€) Resort: excel 3720000 python 3720000.0000
+OK    [changed] Returns EBIT (€) Island: excel 320000 python 320000.0000
+OK    [changed] Returns EBIT (€) Group: excel 4620000 python 4620000.0000
+OK    [changed] Returns Net book value (€) City: excel 8900000 python 8900000.0000
+OK    [changed] Returns Net book value (€) Resort: excel 37500000 python 37500000.0000
+OK    [changed] Returns Net book value (€) Island: excel 12500000 python 12500000.0000
+OK    [changed] Returns Net book value (€) Group: excel 58900000 python 58900000.0000
+OK    [changed] Returns Capital employed (€) City: excel 8995000 python 8995000.0000
+OK    [changed] Returns Capital employed (€) Resort: excel 37320000 python 37320000.0000
+OK    [changed] Returns Capital employed (€) Island: excel 12600000 python 12600000.0000
+OK    [changed] Returns Capital employed (€) Group: excel 58915000 python 58915000.0000
+OK    [changed] Returns ROCE City: excel 0.0644802668148972 python 0.0645
+OK    [changed] Returns ROCE Resort: excel 0.0996784565916399 python 0.0997
+OK    [changed] Returns ROCE Island: excel 0.0253968253968254 python 0.0254
+OK    [changed] Returns ROCE Group: excel 0.0784180599168293 python 0.0784
+OK    [changed] check 1a unmapped accounts: 0
+OK    [changed] check 1b export total − P&L total: 0
+OK    [changed] check 2a duplicates: 1
+OK    [changed] check 2b amount removed: 250000
+OK    [changed] check 2c duplicate line: 40
+OK    [changed] check 3 rooms tie-out City: 0
+OK    [changed] check 4a fee per contract City: 240000
+OK    [changed] check 4c to claim back City: 0
+OK    [changed] check 5 register − ledger depreciation City: -40000
+OK    [changed] check 3 rooms tie-out Resort: 1350000
+OK    [changed] check 4a fee per contract Resort: 1230000
+OK    [changed] check 4c to claim back Resort: -150000
+OK    [changed] check 5 register − ledger depreciation Resort: 0
+OK    [changed] check 3 rooms tie-out Island: 0
+OK    [changed] check 4a fee per contract Island: 210000
+OK    [changed] check 4c to claim back Island: -30000
+OK    [changed] check 5 register − ledger depreciation Island: 0
+OK    [changed] check 6 journal entry debits − credits: 0
+OK    [changed] check 4d EBITDA after recovery City: 880000
+OK    [changed] check 4d EBITDA after recovery Resort: 5070000
+OK    [changed] check 4d EBITDA after recovery Island: 690000
+OK    [changed] Contract City Base fee: excel 128000
+OK    [changed] Contract City Incentive fee: excel 112000
+OK    [changed] Contract City Fee per contract: excel 240000
+OK    [changed] Contract Resort Base fee: excel 600000
+OK    [changed] Contract Resort Incentive fee: excel 630000
+OK    [changed] Contract Resort Fee per contract: excel 1230000
+OK    [changed] Contract Island Base fee: excel 120000
+OK    [changed] Contract Island Incentive fee: excel 90000
+OK    [changed] Contract Island Fee per contract: excel 210000
+      234 results compared after the change
+
+494 of 494 checks passed; 0 failed.

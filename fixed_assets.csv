@@ -1,0 +1,10 @@
+hotel,asset,cost_eur,useful_life_years,in_use_from_year
+City,Land,2000000,0,2016
+City,Building,8000000,40,2016
+City,Furniture and equipment,1000000,10,2021
+Resort,Land,10000000,0,2011
+Resort,Building,40000000,40,2011
+Resort,Furniture and equipment,5000000,10,2021
+Island,Land,3000000,0,2021
+Island,Building,10000000,40,2021
+Island,Furniture and equipment,1500000,10,2021

@@ -1,0 +1,16 @@
+account,account_name,pnl_line
+4000,Room revenue,Rooms revenue
+4100,Food and beverage revenue,F&B and other revenue
+4200,"Other revenue (spa, parking)",F&B and other revenue
+5000,Food and beverage cost,Food and beverage cost
+6000,Salaries,Staff costs
+6010,Social security,Staff costs
+6100,Electricity,Utilities and energy
+6110,Water and gas,Utilities and energy
+6200,Tour operator commissions,Sales and marketing
+6210,Online booking commissions,Sales and marketing
+6220,Advertising,Sales and marketing
+6300,Repairs and maintenance,Repairs and maintenance
+6400,Other operating expenses,Other operating costs
+6800,Management fee (as invoiced),Management fee
+7000,Depreciation,Depreciation

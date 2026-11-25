@@ -1,0 +1,47 @@
+line,hotel,account,account_name,amount_eur
+1,City,4000,Room revenue,2555000
+2,City,4100,Food and beverage revenue,545000
+3,City,4200,"Other revenue (spa, parking)",100000
+4,City,5000,Food and beverage cost,200000
+5,City,6000,Salaries,800000
+6,City,6010,Social security,200000
+7,City,6100,Electricity,220000
+8,City,6110,Water and gas,80000
+9,City,6200,Tour operator commissions,30000
+10,City,6210,Online booking commissions,200000
+11,City,6220,Advertising,70000
+12,City,6300,Repairs and maintenance,120000
+13,City,6400,Other operating expenses,160000
+14,City,6800,Management fee (as invoiced),240000
+15,City,7000,Depreciation,300000
+16,Resort,4000,Room revenue,10800000
+17,Resort,4100,Food and beverage revenue,3700000
+18,Resort,4200,"Other revenue (spa, parking)",500000
+19,Resort,5000,Food and beverage cost,1300000
+20,Resort,6000,Salaries,3360000
+21,Resort,6010,Social security,840000
+22,Resort,6100,Electricity,800000
+23,Resort,6110,Water and gas,300000
+24,Resort,6200,Tour operator commissions,600000
+25,Resort,6210,Online booking commissions,450000
+26,Resort,6220,Advertising,150000
+27,Resort,6300,Repairs and maintenance,450000
+28,Resort,6400,Other operating expenses,450000
+29,Resort,6800,Management fee (as invoiced),1080000
+30,Resort,7000,Depreciation,1500000
+31,Island,4000,Room revenue,2400000
+32,Island,4100,Food and beverage revenue,540000
+33,Island,4200,"Other revenue (spa, parking)",60000
+34,Island,5000,Food and beverage cost,200000
+35,Island,6000,Salaries,800000
+36,Island,6010,Social security,200000
+37,Island,6100,Electricity,250000
+38,Island,6110,Water and gas,80000
+39,Island,6200,Tour operator commissions,120000
+40,Island,6100,Electricity,250000
+41,Island,6210,Online booking commissions,130000
+42,Island,6220,Advertising,50000
+43,Island,6300,Repairs and maintenance,130000
+44,Island,6400,Other operating expenses,140000
+45,Island,6800,Management fee (as invoiced),180000
+46,Island,7000,Depreciation,400000
